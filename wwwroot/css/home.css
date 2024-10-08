@@ -131,3 +131,17 @@
         opacity: 0.9;
         transition: 2s ease;
     }
+
+.ai_below_blocks {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 4vh;
+}
+.ai_below_blocks h1 {
+    font: Anton;
+    color: #f8bd08;
+    font-size: 4vw;
+    text-shadow: 2px 2px 0px navy, 2px 2px 4px white;
+}

@@ -1,6 +1,9 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@{
     ViewData["Title"] = "Home Page";
 }
+
 
 
  <div class="home">
@@ -103,6 +106,17 @@
                </div>    
            </div>
        </div>
+            <div class="ai_below_blocks">
+           <h4 class="text-light">Upload AI images</h4>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <a class="nav-link text-light" asp-area="" asp-controller="AIImages" asp-action="Create">Click here to upload new AI image</a>
+                }
+                else{
+                    <p class="text-light ">Please <a class="text-decoration-none" asp-area="Identity" asp-page="/Account/Login">login</a> or <a class="text-decoration-none" asp-area="Identity" asp-page="/Account/Register">register</a> to upload your AI images.</p>
+
+                }
+            </div>
        </div>
    
    </div>
